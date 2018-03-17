@@ -1,0 +1,16 @@
+﻿{
+  "TransactionId": "123456789",
+  "ClientData": {
+    "Name": "Jan Kowalski",
+    "Address": {
+      "Country": "Poland",
+      "PostalCode": "53-010",
+      "City": "Wrocław"
+    }
+  },
+  "Reservation": {
+    "ReservationId": "987654321",
+    "ReservationStatus": "CONFIRMED"
+  },
+  "Hash": "ae8e812ccdd6dc53cd0e6b452588dd942aeff9957c8a475071c6745dcc78f692"
+}
