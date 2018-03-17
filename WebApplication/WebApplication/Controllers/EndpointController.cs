@@ -16,9 +16,9 @@ namespace WebApplication.Controllers
         public ActionResult TestEndpoint()
         {
             string responseStatus;
-            var responseMessage = string.Empty;
-
+            string responseMessage;
             var response = new ResponseModel();
+
             var transactionModel = EndpointHelper.GetModelFromRequest(Request.InputStream);
             
             // TODO: input string log
@@ -30,6 +30,7 @@ namespace WebApplication.Controllers
                 var result = repository.SaveReservation(transactionModel.Reservation);
 
                 responseStatus = result ? "SUCCESS" : "FAILED";
+                responseMessage = result ? "data saved" : "save data error";
             }
             else
             {
