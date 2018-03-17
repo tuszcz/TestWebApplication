@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
+using WebApplication.Models;
 
 namespace WebApplication.Controllers
 {
@@ -12,10 +14,21 @@ namespace WebApplication.Controllers
         [HttpPost]
         public ActionResult TestEndpoint()
         {
-            var jsonString = EndpointHelper.GetModelFromRequest(Request.InputStream);
-            
+            var response = new ResponseModel();
+            var transactionModel = EndpointHelper.GetModelFromRequest(Request.InputStream);
 
-            return null;
+            if (EndpointHelper.CheckTransactionModelHash(transactionModel))
+            {
+                
+            }
+            else
+            {
+                response.TransactionId = transactionModel.TransactionId;
+                response.ResponseStatus = "FAILED";
+                response.ResponseMessage = "invalid hash";
+            }
+            
+            return Content(JsonConvert.SerializeObject(response));
         }
 
         

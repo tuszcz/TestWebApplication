@@ -7,7 +7,7 @@ namespace WebApplication.Models
 {
     public class ReservationModel
     {
-        public string ReservationsId { get; set; }
+        public string ReservationId { get; set; }
         public string ReservationStatus { get; set; }
     }
 }

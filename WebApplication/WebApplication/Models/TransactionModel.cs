@@ -10,7 +10,7 @@ namespace WebApplication.Models
         public string TransactionId { get; set; }
         public string Hash { get; set; }
 
-        public ClientDataModel Clientata { get; set; }
+        public ClientDataModel ClientData { get; set; }
         public ReservationModel Reservation { get; set; }
     }
 }
